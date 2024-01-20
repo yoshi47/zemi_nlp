@@ -1,0 +1,12 @@
+wikiextractor
+gensim
+scipy
+pandas
+numpy
+datasets
+tensorflow
+torch
+torchvision
+transformers
+mecab-python3
+sentencepiece

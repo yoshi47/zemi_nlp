@@ -1,0 +1,20 @@
+services:
+  jupyterlab:
+    restart: always
+    build: .
+    container_name: nlp
+    volumes:
+      # - ./root_jupyter:/root/.jupyter
+      - ./work:/work
+    working_dir: /work
+    ports:
+      - "8888:8888"
+    command:
+      jupyter-lab --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token='' --notebook-dir=/work
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
